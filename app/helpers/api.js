@@ -1,5 +1,6 @@
-const NAME = "roll-and-stroll",
-    DOMAIN = `http://${NAME}.com`,
+const NAME = "Roll & Stroll",
+    DOMAIN = `http://127.0.0.1:5500`,
+    //DOMAIN = `http://${NAME}.com`,
     // referencia a nuestra API
     BASE_URL = `http://localhost:3000`,
     API_HELLO = `${BASE_URL}/api/hola`,
