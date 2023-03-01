@@ -2,7 +2,7 @@ import api from "./helpers/api.js";
 import {ajax} from "./helpers/ajax.js";
 
 /* UI - componentes */
-import { Title } from "./components/title.js";
+import { Header } from "./components/header.js";
 import { Loader } from "./components/loader.js";
 
 /* Creamos el componente principal */
@@ -10,7 +10,8 @@ export function App(){
     const d = document,
     $root = d.getElementById("root"); //variable que hacer referencia al root del DOM
 
-    $root.appendChild(Title());
+    $root.appendChild(Header());
+
     $root.appendChild(Loader());
 
 
