@@ -53,3 +53,29 @@ img {
     height: 4rem;
 }
 
+.form-search {
+    margin: auto;
+    text-align: 0.50rem;
+}
+
+.form-search input {
+    display: block;
+    margin: auto;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.header {
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    background-color: #3173908c;
+}
+
+/* Para aplicar un espaciado entre todos los elementos hijos del header */
+.header > * {
+    margin: 1rem auto;
+}
+
