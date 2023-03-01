@@ -13,10 +13,7 @@ export function App(){
     $root.appendChild(Title());
     $root.appendChild(Loader());
 
-    ajax({
-        url: "no-valida",
-        cbSuccess: () =>{}
-    })
+
 
 /*     document.getElementById("root").innerHTML = '<h1>Wellcome to Roll & Stroll SPA</h1>';
 
