@@ -16,6 +16,7 @@ body {
     margin:0;
     overflow-x: hidden;
     font-family: "Nunito";
+    background-color: #fafafa;
 }
 
 /* Para los enlaces */
@@ -91,14 +92,54 @@ img {
 }
 
 .bike-card {
+    width: 95%;
     margin: 1rem auto;
     padding: 1rem;
-    width: 80%;
-    background-color: #eceff1;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -moz-box-align: stretch;
+    background-color: #ffffff;
+    justify-content: center;
+    font-family: inherit;
+    color: rgb(64, 64, 64);
+    border-radius: 25px;
+    border: 1.5px solid #78cdde;
+
 }
 
 .bike-card p {
     display: flex;
     justify-content: space-between;
+
+}
+
+.precio {
+    display: block;
+    font-size: 1.25em;
+    line-height: 24px;
+    color: rgb(64, 64, 64);
+    font-weight: 700;
+    flex: 1 1 0%;
+}
+
+.modelo {
+    display: block;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+    flex: 0 0 auto;
+}
+
+.marca {
+    display: block;
+    font-size: 17px;
+    line-height: 24px;
+    color: rgb(115, 115, 115);
+    font-weight: 700;
+    flex: 0 0 auto;
 }
 
