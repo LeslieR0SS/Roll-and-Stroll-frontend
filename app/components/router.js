@@ -1,6 +1,7 @@
 import api from "../helpers/api.js";
 import { ajax } from "../helpers/ajax.js";
 import { BikeCard } from "./bikeCard.js";
+import { Bike } from "./bike.js";
 
 export async function Router () {
     const d  = document;
@@ -19,18 +20,20 @@ export async function Router () {
         await ajax({
             url:api.BIKES,
             cbSuccess:(bikes) => {
-                //console.log(bikes);
+                console.log(bikes);
                 let html = "";
                 bikes.forEach((bike) => (html += BikeCard(bike)));
                 d.querySelector(".loader").style.display="none"; 
                 $bikes.innerHTML = html;
             },
         });
+        console.log(api.BIKE)
     } else if (hash.includes("#/search")){
         $bikes.innerHTML = "<h2>Sección del Buscador</h2>";
     } else if (hash === "#/crud"){
         $bikes.innerHTML = "<h2>Sección del form del CRUD</h2>";
     }else{
+        
         $bikes.innerHTML = "<h2>Aquí cargará el contenido de la bici seleccionada</h2>"
     }
     
