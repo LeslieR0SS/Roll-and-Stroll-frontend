@@ -7,7 +7,7 @@ let {modelo, marca, precio,id,img} = props;
 devolverá false y dejará de ejecutarse. En cambio, si existe el enlace lo guardamos y seteamos el valor en localStorage*/
 document.addEventListener("click", (link)=>{
     if(!link.target.matches(".bike-card a")) return false;
-    localStorage.setItem("bike-Id", link.target.dataset.id);
+    localStorage.setItem("bike-id", link.target.dataset.id);
 });
 
 
