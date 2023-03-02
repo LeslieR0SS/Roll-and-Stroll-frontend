@@ -31,7 +31,7 @@ export async function Router () {
     } else if (hash === "#/crud"){
         $bikes.innerHTML = "<h2>Sección del form del CRUD</h2>";
     }else{
-        $bikes.innerHTML = "<h2>Aquí cargará el contenido de las bicis seleccionadas</h2>"
+        $bikes.innerHTML = "<h2>Aquí cargará el contenido de la bici seleccionada</h2>"
     }
     
     // para ocultar el componente loader    
