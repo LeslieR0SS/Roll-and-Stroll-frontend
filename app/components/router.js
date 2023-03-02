@@ -2,7 +2,7 @@ import api from "../helpers/api.js";
 import { ajax } from "../helpers/ajax.js";
 import { BikeCard } from "./bikeCard.js";
 
-export function Router () {
+export async function Router () {
     const d  = document;
     const w = window;
     const $bikes = d.getElementById("bikes");
@@ -16,7 +16,7 @@ export function Router () {
 
     if(!hash || hash === "#/"){
         //$bikes.innerHTML = "<h2>Sección del Home</h2>";
-        ajax({
+        await ajax({
             url:api.BIKES,
             cbSuccess:(bikes) => {
                 //console.log(bikes);
@@ -33,6 +33,9 @@ export function Router () {
     }else{
         $bikes.innerHTML = "<h2>Aquí cargará el contenido de las bicis seleccionadas</h2>"
     }
+    
+    // para ocultar el componente loader    
+    d.querySelector(".loader").style.display = "none";
 
 
 }

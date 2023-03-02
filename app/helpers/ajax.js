@@ -1,9 +1,9 @@
 // React inspo || función para tratar y procesar de una manera más rápida todos las peticiones asíncronas
-export function ajax (props){
+export async function ajax (props){
 // Desestructración 
 let {url, method, headers, cbSuccess} = props;
 
-fetch(url)
+await fetch(url)
 // si la respuesta es 200 lo convertimos a json. Si no lo rechazamos con el mñetodo "Promise.reject". Ya Fetch trabaja con promesas
     .then(res => res.ok? res.json() : Promise.reject(res))
 // En caso de éxito
@@ -18,7 +18,8 @@ fetch(url)
         </div>
         `;
 
-        document.querySelector(".loader").style.display = "none";
+        // para ocultar el componente loader    
+        document.querySelector(".loader").style.display = "none"; 
 
         console.log(err);
     });
