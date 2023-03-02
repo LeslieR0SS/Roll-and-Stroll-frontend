@@ -3,7 +3,8 @@
 
 # Roll & Stroll | Front-End
 >***Presentation:***
->Hello World! This is the Front-End of our winter project. We are going to integrate our API with an full vanillaJS SPA. that is to say no frameworks
+>Hello World! This is the Front-End of our winter project. We are going to integrate our API with a full vanillaJS SPA. That is to say n
+o frameworks
 
 ---
 ## SPA
