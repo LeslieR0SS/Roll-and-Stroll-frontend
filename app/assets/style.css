@@ -155,3 +155,56 @@ img {
     flex: 0 0 auto;
 }
 
+.modelo-title{
+    font-weight: 800;
+    font-family: "__Roboto_7c7d57", "__Roboto_Fallback_7c7d57", system-ui, sans-serif;
+    font-size: 5rem;
+    margin: auto;
+    margin-top: -30px;
+}
+
+.bike-img{
+    float: right;
+    padding-bottom: 2em;
+}
+
+table {
+    min-width: 0px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 4px;
+  }
+  
+
+  td {
+    border-top: none;
+    -moz-box-align: baseline;
+    position: relative; /* set the position of the td to relative */
+    left: 10px; /* move the td 10 pixels to the right */
+    
+  }
+  
+  td:first-child {
+    border-left: none;
+    float: left;
+  }
+  
+  
+  th {
+    padding: 4px 4px;
+    padding-right: 1px;
+    font-weight: bold;
+    width: 30%;
+    text-align: left;
+  }
+
+
+
+
+
+
+

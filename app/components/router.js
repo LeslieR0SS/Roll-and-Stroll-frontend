@@ -33,8 +33,16 @@ export async function Router () {
     } else if (hash === "#/crud"){
         $bikes.innerHTML = "<h2>Sección del form del CRUD</h2>";
     }else{
-        
-        $bikes.innerHTML = "<h2>Aquí cargará el contenido de la bici seleccionada</h2>"
+/*      $bikes.innerHTML = 
+        "<h2>Aquí cargará el contenido de la bici seleccionada</h2>"; */
+        console.log(`${api.BIKE}/${localStorage.getItem("bike-id")}`);
+        await ajax({
+            url:`${api.BIKE}/${localStorage.getItem("bike-id")}`,
+            cbSuccess:(bike) => {
+                console.log(bike);
+                $bikes.innerHTML= Bike(bike);
+            },
+        });
     }
     
     // para ocultar el componente loader    
