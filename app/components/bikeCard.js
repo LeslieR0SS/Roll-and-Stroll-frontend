@@ -10,6 +10,8 @@ document.addEventListener("click", (link)=>{
     localStorage.setItem("bike-id", link.target.dataset.id);
 });
 
+let bikeUrl = modelo.replace(" ", "-");
+console.log(bikeUrl)
 
 /* 2.En enlace de cada bicicleta añadimos un atributo (data-id) para almacenar en el local-storage
 el id de la bici obtenida para así luego realizar un GET con ese id que hemos guardado */
@@ -20,7 +22,7 @@ return `
     <p class = "marca">${marca}</p>
     <p class = "precio">
         ${precio} €     
-        <a href="#/spa/bike/${modelo}" data-id="${id}">Ver Bici</a>
+        <a href="#/spa/bike/${bikeUrl}" data-id="${id}">Ver Bici</a>
     </p>
     </div>
     `;
