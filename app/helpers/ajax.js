@@ -12,7 +12,7 @@ await fetch(url)
     .catch(err => {
         let message = err.statusText || "Error al acceder a la API";
 
-        document.getElementById("bikes").innerHTML = `
+        document.getElementById("main").innerHTML = `
         <div class = "error">
             <p>Error ${err.status}: ${message}</p>
         </div>

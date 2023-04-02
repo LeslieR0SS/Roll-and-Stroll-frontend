@@ -4,7 +4,7 @@ import {ajax} from "./helpers/ajax.js"; */
 /* UI - componentes */
 import { Header } from "./components/header.js";
 import { Loader } from "./components/loader.js";
-import { Bikes } from "./components/bikes.js";
+import { Main } from "./components/main.js";
 //import { BikeCard } from "./components/bikeCard.js";
 import { Router } from "./components/router.js";
 
@@ -16,7 +16,7 @@ export function App(){
     $root.innerHTML = null;
 
     $root.appendChild(Header());
-    $root.appendChild(Bikes());
+    $root.appendChild(Main());
     $root.appendChild(Loader());
 
     Router();
