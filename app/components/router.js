@@ -28,10 +28,19 @@ export async function Router () {
             },
         });
         console.log(api.BIKE)
-    } else if (hash.includes("#/search")){
-        $main.innerHTML = "<h2>Sección del Buscador</h2>";
+    } else if (hash.includes("#/stores")){
+        $main.innerHTML = "<h2>Sección de las tiendas</h2>";
+        await ajax({
+            url:api.STORES,
+            cbSuccess: (hello) => console.log(hello)
+
+            })
+
     } else if (hash === "#/crud"){
         $main.innerHTML = "<h2>Sección del form del CRUD</h2>";
+    } else if (hash === "#/available"){
+        $main.innerHTML = "<h2>Sección de Bicis disponibles </h2>";
+
     }else{
 /*      $main.innerHTML = 
         "<h2>Aquí cargará el contenido de la bici seleccionada</h2>"; */
@@ -39,13 +48,13 @@ export async function Router () {
         await ajax({
             url:`${api.BIKE}/${localStorage.getItem("bike-id")}`,
             cbSuccess:(bike) => {
-                console.log(bike);
+                console.log(bike);  
                 $main.innerHTML= Bike(bike);
             },
         });
     }
     
-    // para ocultar el componente loader    
+    // para ocultar el componente loader en todas las secciones una vez se haya cargado el contenido.
     d.querySelector(".loader").style.display = "none";
 
 

@@ -177,30 +177,29 @@ table {
 
 th, td {
     padding: 4px;
-  }
-  
+}
 
-  td {
+td {
     border-top: none;
     -moz-box-align: baseline;
     position: relative; /* set the position of the td to relative */
     left: 10px; /* move the td 10 pixels to the right */
     
-  }
-  
-  td:first-child {
+}
+
+td:first-child {
     border-left: none;
     float: left;
-  }
-  
-  
-  th {
+}
+
+
+th {
     padding: 4px 4px;
     padding-right: 1px;
     font-weight: bold;
     width: 30%;
     text-align: left;
-  }
+}
 
 
 
