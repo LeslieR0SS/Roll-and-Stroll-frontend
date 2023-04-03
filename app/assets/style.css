@@ -1,0 +1,247 @@
+html {
+    box-sizing: border-box; /* Para que la cajas empiecen a contar desde el borde*/
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+/*El boxsizing es heredado a todos los elementos html*/
+*,
+*:after,
+*::before{
+    box-sizing: inherit;
+}
+
+/*Para el body, establecemos sus márgenes a 0. Y con el "overflow-x" lo establecemos en hidden para que no aparezaca la barra horzintal en algún elemento*/
+body {
+    margin:0;
+    overflow-x: hidden;
+    font-family: "Nunito";
+    background-color: #fafafa;
+}
+
+/* Para los enlaces */
+a {
+    color: #0341eb;
+    transition: color 0.3s ease; /*Para la transición establecemos un color y un efecto de acelaración ease*/
+}
+
+
+a:hover {
+    color: #00b0ff;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/*Para obtener imágenes responsive*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.error {
+    padding: 1rem;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.loader {
+    margin: 1rem auto;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
+
+.search-form {
+    margin: auto;
+    text-align: 0.50rem;
+}
+
+.search-form input {
+/*     display: block;
+    margin: auto;
+    padding: 0.25rem;
+    border-radius: %; */
+    font-size: 15px; 
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 4px;
+
+    color: rgb(38, 38, 38);
+    background-color: white;
+
+    padding: 12px 12px 12px 12px;
+
+    font-weight: 700;
+}
+
+/* Para una grid responsive */
+.grid-fluid {
+    margin:1rem auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(290px, 1fr));
+
+
+}
+
+.header {
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    background-color: #9fcfe0;
+}
+
+/* Para aplicar un espaciado entre todos los elementos hijos del header */
+.header > * {
+    margin: 1rem auto;
+}
+
+.bike-card {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -moz-box-align: stretch;
+    background-color: #ffffff;
+    justify-content: center;
+    font-family: inherit;
+    color: rgb(64, 64, 64);
+    border-radius: 25px;
+    border: 1.5px solid #78cdde;
+
+}
+
+.bike-card p {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.precio {
+    display: block;
+    font-size: 1.25em;
+    line-height: 24px;
+    color: rgb(64, 64, 64);
+    font-weight: 700;
+    flex: 1 1 0%;
+}
+
+.modelo {
+    display: block;
+    font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+    flex: 0 0 auto;
+}
+
+.marca {
+    display: block;
+    font-size: 17px;
+    line-height: 24px;
+    color: rgb(115, 115, 115);
+    font-weight: 700;
+    flex: 0 0 auto;
+}
+
+.modelo-title{
+    font-weight: 800;
+    font-family: "__Roboto_7c7d57", "__Roboto_Fallback_7c7d57", system-ui, sans-serif;
+    font-size: 5rem;
+    margin: auto;
+    margin-top: -30px;
+}
+
+.bike-img{
+    float: right;
+    padding-bottom: 2em;
+}
+
+table {
+    min-width: 0px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 4px;
+}
+
+td {
+    border-top: none;
+    -moz-box-align: baseline;
+    position: relative; /* set the position of the td to relative */
+    left: 10px; /* move the td 10 pixels to the right */
+    
+}
+
+td:first-child {
+    border-left: none;
+    float: left;
+}
+
+
+th {
+    padding: 4px 4px;
+    padding-right: 1px;
+    font-weight: bold;
+    width: 30%;
+    text-align: left;
+}
+
+
+.store-card {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -moz-box-align: stretch;
+    background-color: #ffffff;
+    justify-content: center;
+    font-family: inherit;
+    color: rgb(64, 64, 64);
+    border-radius: 25px;
+    border: 1.5px solid #78cdde;
+
+}
+.store-card p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.store-card h2 {
+    font-weight: 800;
+    font-family: "__Roboto_7c7d57", "__Roboto_Fallback_7c7d57", system-ui, sans-serif;
+    font-size: 2rem;
+    margin: auto;
+    margin-top: -30px;
+}
+
+
+.store-card img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    size: 1px;
+}
+
+
+
+
+
+
+
