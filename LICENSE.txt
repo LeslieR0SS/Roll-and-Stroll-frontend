@@ -2,14 +2,17 @@ LICENSE
 
 This project and all its associated files and code are the exclusive property of Leslie Ross Aranibar Pozo. All rights are reserved.
 
-This project and its associated files and code may only be made available for review by your professor for academic purposes. It may not be used for any other purposes, and no financial benefits may be derived from its use or distribution.
+This project and its associated files and code may only be made available for review by your professor for academic purposes.
+It may not be used for any other purposes, and no financial benefits may be derived from its use or distribution.
 
 Any use of this project or its associated files and code must include the following notice:
 
-"Roll & Stroll - frontend is the exclusive property of Leslie Ross Aranibar Pozo. All rights are reserved. This project may only be used for academic purposes by [Your Professor's Name] for review."
+"Roll & Stroll - frontend is the exclusive property of Leslie Ross Aranibar Pozo. All rights are reserved. This project may only be used 
+for academic purposes by Jaume Rossinyol Pujol for review."
 
 Any modifications to this project or its associated files and code must be approved by Leslie Ross Aranibar Pozo in writing prior to distribution.
 
-By using this project or its associated files and code, you agree to be bound by the terms of this license agreement. If you do not agree to these terms, you may not use or distribute this project or its associated files and code.
+By using this project or its associated files and code, you agree to be bound by the terms of this license agreement. If you do not agree to 
+these terms, you may not use or distribute this project or its associated files and code.
 
 For questions or concerns about this license agreement, please contact Leslie Ross Aranibar Pozo at aleslieross@gmail.com."
