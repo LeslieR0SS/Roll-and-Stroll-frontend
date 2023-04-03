@@ -7,8 +7,8 @@ import { Loader } from "./components/loader.js";
 import { Main } from "./components/main.js";
 //import { BikeCard } from "./components/bikeCard.js";
 import { Router } from "./components/router.js";
+import { StoreCard } from "./components/storeCard.js";
 //import { SearchForm } from "./components/searchForm.js";
-import { Stores } from "./components/stores.js";
 
 /* Creamos el componente principal */
 export function App(){
@@ -20,7 +20,7 @@ export function App(){
     $root.appendChild(Header());
     $root.appendChild(Main());
     $root.appendChild(Loader());
-    $root.appendChild(Stores());
+
     Router();
 
 /*     ajax({

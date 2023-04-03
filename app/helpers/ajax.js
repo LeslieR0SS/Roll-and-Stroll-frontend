@@ -1,7 +1,7 @@
 // React inspo || función para tratar y procesar de una manera más rápida todos las peticiones asíncronas
 export async function ajax (props){
 // Desestructración 
-let {url, method, headers, cbSuccess} = props;
+let {url, method, headers, cbSuccess, cbError} = props;
 
 await fetch(url)
 // si la respuesta es 200 lo convertimos a json. Si no lo rechazamos con el mñetodo "Promise.reject". Ya Fetch trabaja con promesas

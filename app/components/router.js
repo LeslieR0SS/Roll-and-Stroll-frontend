@@ -2,6 +2,7 @@ import api from "../helpers/api.js";
 import { ajax } from "../helpers/ajax.js";
 import { BikeCard } from "./bikeCard.js";
 import { Bike } from "./bike.js";
+import { StoreCard } from "./storeCard.js";
 
 export async function Router () {
     const d  = document;
@@ -32,8 +33,20 @@ export async function Router () {
         $main.innerHTML = "<h2>Sección de las tiendas</h2>";
         await ajax({
             url:api.STORES,
-            cbSuccess: (hello) => console.log(hello)
-
+            //cbSuccess: (hello) => console.log(hello)
+            cbSuccess:(res) => {
+                console.log(res);
+                let html = "";
+                const stores = res.stores;
+                console.log(stores);
+                stores.forEach((store) => (html += StoreCard(store)));
+                d.querySelector(".loader").style.display="none"; 
+                $main.innerHTML = html;
+            },
+            cbError: (error) => {
+                console.error(error);
+                $main.innerHTML = "<p>Error loading stores</p>";
+            },
             })
 
     } else if (hash === "#/crud"){
