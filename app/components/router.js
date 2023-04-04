@@ -63,8 +63,20 @@ export async function Router () {
             },
         });
 
-    } else if (hash === "#/available"){
+    } else if (hash.includes("#/spa/availables")){
         $main.innerHTML = "<h2>Sección de Bicis disponibles </h2>";
+        console.log(`${api.BIKE_AVAILABLE}`)
+        await ajax({
+            url:api.BIKE_AVAILABLE,
+            cbSuccess:(bikes) => {
+                console.log(bikes);
+                let html = "";
+                bikes.forEach((bike) => (html += BikeCard(bike)));
+                d.querySelector(".loader").style.display="none"; 
+                $main.innerHTML = html;
+            },
+        });
+
 
     }else{
 /*      $main.innerHTML = 
