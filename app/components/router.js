@@ -35,7 +35,6 @@ export async function Router() {
 
     console.log(api.BIKE);
   } else if (hash.includes("#/stores")) {
-    mainEl.innerHTML = "<h2>Sección de las tiendas</h2>";
 
     const handleSuccess = (res) => {
       console.log(res);
@@ -71,7 +70,6 @@ export async function Router() {
       cbSuccess: handleSuccess,
     });
   } else if (hash.includes("#/spa/availables")) {
-    mainEl.innerHTML = "<h2>Sección de Bicis disponibles </h2>";
     console.log(api.BIKE_AVAILABLE);
 
     const handleSuccess = (bikes) => {
