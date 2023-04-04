@@ -103,6 +103,18 @@ img {
     margin: 1rem auto;
 }
 
+.logo {
+    position: absolute;
+    font-size: 3rem;
+	top: calc(50% - 40px);
+	left: 50px;
+	transform: translateY(-50%);
+	color: #fffc;
+/* 	font-family: 'Quicksand';
+ */	cursor: default;
+	user-select: none;
+}
+
 .bike-card {
     width: 95%;
     margin: 1rem auto;
@@ -116,6 +128,7 @@ img {
     color: rgb(64, 64, 64);
     border-radius: 25px;
     border: 1.5px solid #78cdde;
+    box-shadow: 0 0 1rem 0.25rem rgb(124, 187, 214);
 
 }
 
