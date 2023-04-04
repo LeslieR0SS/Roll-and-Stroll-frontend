@@ -55,7 +55,6 @@ export async function Router() {
       cbError: handleError,
     });
   } else if (hash.includes("#/spa/store/")) {
-    //Aquí falla!!
     console.log(
       `${api.STORE_BIKES}/${localStorage.getItem("store-card")}/bikes`
     );
@@ -87,8 +86,7 @@ export async function Router() {
       cbSuccess: handleSuccess,
     });
   } else {
-    /*$main.innerHTML = 
-        "<h2>Aquí cargará el contenido de la bici seleccionada</h2>";*/
+    /*Aquí cargará el contenido de la bici seleccionada*/
     console.log(`${api.BIKE}/${localStorage.getItem("bike-id")}`);
 
     const handleSuccess = (bike) => {

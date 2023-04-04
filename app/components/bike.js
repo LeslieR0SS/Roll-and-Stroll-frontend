@@ -3,11 +3,7 @@ export function Bike (props) {
     let { modelo,marca, precio, tipo, tipo_freno, horquilla, tipo_suspension, color, material_cuadro,
         talla,recorrido_suspension_trasera, marca_motor,tamaño_rueda, sexo, img} = propsJsonObject;
     console.log(propsJsonObject);
-/*     let jsonArray = props;
-    let propsJsonObject = jsonArray [0];
-    console.log(propsJsonObject)
 
-    let {modelo} = propsJsonObject; */
 
 return `
     <section class = "bike-page">
