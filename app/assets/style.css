@@ -25,6 +25,10 @@ a {
     transition: color 0.3s ease; /*Para la transición establecemos un color y un efecto de acelaración ease*/
 }
 
+.header a {
+    text-decoration: none;
+}
+
 
 a:hover {
     color: #00b0ff;
