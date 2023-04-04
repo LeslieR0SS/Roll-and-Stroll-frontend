@@ -8,7 +8,7 @@ const NAME = "Roll & Stroll",
     BIKE = `${BASE_URL}/api/bike`,
     BIKE_AVAILABLE = `${BASE_URL}/api/bike/available`,
     STORES = `${BASE_URL}/api/stores`,
-    STORE_BIKES = `${BASE_URL}/api/stores/:id_store/bikes`,
+    STORE_BIKES = `${BASE_URL}/api/stores`,
     STORE = `${BASE_URL}/stores/:id`;
 
 

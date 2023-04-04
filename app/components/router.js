@@ -47,10 +47,22 @@ export async function Router () {
                 console.error(error);
                 $main.innerHTML = "<p>Error loading stores</p>";
             },
-            })
+            });
 
-    } else if (hash === "#/crud"){
-        $main.innerHTML = "<h2>Sección del form del CRUD</h2>";
+    } else if (hash.includes( "#/spa/store/")){
+        //Aquí falla!!
+        console.log(`${api.STORE_BIKES}/${localStorage.getItem("store-card")}/bikes`);
+        await ajax({
+            url:`${api.STORE_BIKES}/${localStorage.getItem("store-card")}/bikes`,
+            cbSuccess:(storeBikes) => {
+                console.log(storeBikes);
+                let html = "";
+                storeBikes.forEach((storeBikes) => (html += BikeCard(storeBikes)));
+                d.querySelector(".loader").style.display="none"; 
+                $main.innerHTML = html;
+            },
+        });
+
     } else if (hash === "#/available"){
         $main.innerHTML = "<h2>Sección de Bicis disponibles </h2>";
 
