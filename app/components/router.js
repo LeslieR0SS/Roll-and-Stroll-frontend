@@ -4,101 +4,100 @@ import { BikeCard } from "./bikeCard.js";
 import { Bike } from "./bike.js";
 import { StoreCard } from "./storeCard.js";
 
+const sections = {
+  "/": loadHomeSection,
+  "/stores": loadStoresSection,
+  "/spa/store/": loadStoreBikesSection,
+  "/spa/availables": loadAvailableBikesSection,
+};
+
 export async function Router() {
   const d = document;
-  const w = window;
-  const mainEl = d.getElementById("main");
+  const $main = d.getElementById("main");
 
-  // Destructuring
+  // destructuring
   const { hash } = location;
-  console.log(hash);
 
-  mainEl.innerHTML = "";
+  $main.innerHTML = null;
 
-  const hideLoader = () => {
-    d.querySelector(".loader").style.display = "none";
-  };
-
-  if (!hash || hash === "#/") {
-    //$main.innerHTML = "<h2>Sección del Home</h2>";
-    const handleSuccess = (bikes) => {
-      console.log(bikes);
-      const bikeCards = bikes.map((bike) => BikeCard(bike)).join("");
-      hideLoader();
-      mainEl.innerHTML = bikeCards;
-    };
-
-    await ajax({
-      url: api.BIKES,
-      cbSuccess: handleSuccess,
-    });
-
-    console.log(api.BIKE);
-  } else if (hash.includes("#/stores")) {
-    mainEl.innerHTML = "<h2>Sección de las tiendas</h2>";
-
-    const handleSuccess = (res) => {
-      console.log(res);
-      const storeCards = res.stores.map((store) => StoreCard(store)).join("");
-      hideLoader();
-      mainEl.innerHTML = storeCards;
-    };
-
-    const handleError = (error) => {
-      console.error(error);
-      mainEl.innerHTML = "<p>Error loading stores</p>";
-    };
-
-    await ajax({
-      url: api.STORES,
-      cbSuccess: handleSuccess,
-      cbError: handleError,
-    });
-  } else if (hash.includes("#/spa/store/")) {
-    //Aquí falla!!
-    console.log(
-      `${api.STORE_BIKES}/${localStorage.getItem("store-card")}/bikes`
-    );
-
-    const handleSuccess = (storeBikes) => {
-      console.log(storeBikes);
-      const bikeCards = storeBikes.map((bike) => BikeCard(bike)).join("");
-      hideLoader();
-      mainEl.innerHTML = bikeCards;
-    };
-
-    await ajax({
-      url: `${api.STORE_BIKES}/${localStorage.getItem("store-card")}/bikes`,
-      cbSuccess: handleSuccess,
-    });
-  } else if (hash.includes("#/spa/availables")) {
-    mainEl.innerHTML = "<h2>Sección de Bicis disponibles </h2>";
-    console.log(api.BIKE_AVAILABLE);
-
-    const handleSuccess = (bikes) => {
-      console.log(bikes);
-      const bikeCards = bikes.map((bike) => BikeCard(bike)).join("");
-      hideLoader();
-      mainEl.innerHTML = bikeCards;
-    };
-
-    await ajax({
-      url: api.BIKE_AVAILABLE,
-      cbSuccess: handleSuccess,
-    });
+  if (hash in sections) {
+    sections[hash]();
   } else {
-    /*$main.innerHTML = 
-        "<h2>Aquí cargará el contenido de la bici seleccionada</h2>";*/
+    loadSelectedBikeSection();
+  }
+
+  // para ocultar el componente loader en todas las secciones una vez se haya cargado el contenido.
+  d.querySelector(".loader").style.display = "none";
+
+  function loadHomeSection() {
+    ajax({
+      url: api.BIKES,
+      cbSuccess: (bikes) => {
+        console.log(bikes);
+        let html = "";
+        bikes.forEach((bike) => (html += BikeCard(bike)));
+        d.querySelector(".loader").style.display = "none";
+        $main.innerHTML = html;
+      },
+    });
+    console.log(api.BIKE);
+  }
+
+  function loadStoresSection() {
+    ajax({
+      url: api.STORES,
+      cbSuccess: (res) => {
+        console.log(res);
+        let html = "";
+        const stores = res.stores;
+        console.log(stores);
+        stores.forEach((store) => (html += StoreCard(store)));
+        d.querySelector(".loader").style.display = "none";
+        $main.innerHTML = html;
+      },
+      cbError: (error) => {
+        console.error(error);
+        $main.innerHTML = "<p>Error loading stores</p>";
+      },
+    });
+  }
+
+  function loadStoreBikesSection() {
+    console.log(`${api.STORE_BIKES}/${localStorage.getItem("store-card")}/bikes`);
+    ajax({
+      url: `${api.STORE_BIKES}/${localStorage.getItem("store-card")}/bikes`,
+      cbSuccess: (storeBikes) => {
+        console.log(storeBikes);
+        let html = "";
+        storeBikes.forEach((storeBikes) => (html += BikeCard(storeBikes)));
+        d.querySelector(".loader").style.display = "none";
+        $main.innerHTML = html;
+      },
+    });
+  }
+
+  function loadAvailableBikesSection() {
+    console.log(`${api.BIKE_AVAILABLE}`);
+    ajax({
+      url: api.BIKE_AVAILABLE,
+      cbSuccess: (bikes) => {
+        console.log(bikes);
+        let html = "";
+        bikes.forEach((bike) => (html += BikeCard(bike)));
+        d.querySelector(".loader").style.display = "none";
+        $main.innerHTML = html;
+      },
+    });
+  }
+
+  function loadSelectedBikeSection() {
     console.log(`${api.BIKE}/${localStorage.getItem("bike-id")}`);
-
-    const handleSuccess = (bike) => {
-      console.log(bike);
-      mainEl.innerHTML = Bike(bike);
-    };
-
-    await ajax({
+    ajax({
       url: `${api.BIKE}/${localStorage.getItem("bike-id")}`,
-      cbSuccess: handleSuccess,
+      cbSuccess: (bike) => {
+        console.log(bike);
+        $main.innerHTML = Bike(bike);
+      },
     });
   }
 }
