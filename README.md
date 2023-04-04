@@ -44,6 +44,14 @@ This design patternis useful because it allows designers and developers to creat
 
 ---
 
+## API - Express
+
+The backend API we will be using for the Roll and Stroll project is a custom one that I've developed using Express, a popular Node.js framework for building web applications. This API has been specifically designed and implemented  to cater our unique requirements.
+
+It is currently deployed and hosted on our server, ready for use in our application. With this API, we have full control over the functionalities and features it provides, allowing us to tailor it to our specific needs. We are excited to leverage our own API to power our application and deliver a seamless experience to our users.
+
+---
+
 
 
 
