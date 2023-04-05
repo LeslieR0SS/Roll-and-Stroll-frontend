@@ -1,0 +1,20 @@
+{
+  "name": "roll-and-stroll-frontend",
+  "version": "0.0.1",
+  "description": "vanillaJS SPA and atomic design pattern",
+  "main": "index.html",
+  "repository": "git@github.com:LeslieR0SS/Roll-and-Stroll-frontend.git",
+  "author": "LeslieR0SS <laranibarpozo@cifpfbmoll.eu>",
+  "license": "LICENSE.txt",
+  "scripts": {
+    "start": "yarn live-server --port=5500 --entry-file=index.html",
+    "test" : "yarn playwright test ",
+    "test-report": "npx playwright show-report"
+  },
+  "dependencies": {
+    "live-server": "1.2.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.32.2"
+  }
+}

@@ -6,6 +6,21 @@
 >Hello World! This is the Front-End of our winter project. We are going to integrate our API with a full vanillaJS SPA. That is to say no frameworks. Moreover, I've implented the atomic design pattern
 
 ---
+## Installation
+
+- ##### Prerequisits:
+  
+- [ ] Node
+- [ ] Yarn package manager
+  
+- ##### Steps:
+1. Git clone the proyect and `cd Roll-and-Stroll-frontend`
+2.  `yarn install`
+3. `yarn start`
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+---
 ## SPA
 
 **SPA** (**S**ingle-**P**age-**A**pplication) is a web application that loads a single HTML page and updates its content dynamically as the user interacts with the application. It provides a more seamless and faster user experience, as it avoids full page reloads. Data for the application is usually loaded asynchronously from a web API.
@@ -51,6 +66,7 @@ The backend API we will be using for the Roll and Stroll project is a custom one
 It is currently deployed and hosted on our server, ready for use in our application. With this API, we have full control over the functionalities and features it provides, allowing us to tailor it to our specific needs. We are excited to leverage our own API to power our application and deliver a seamless experience to our users.
 
 ---
+
 
 
 

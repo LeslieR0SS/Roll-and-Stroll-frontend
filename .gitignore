@@ -1,0 +1,12 @@
+#Node Stuff
+node_modules/*
+
+#Compiled files
+yarn.lock
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Playwright stuff
+test-examples/
+tests/example.spec.ts
