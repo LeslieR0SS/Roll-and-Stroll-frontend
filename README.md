@@ -18,6 +18,10 @@
 2.  `yarn install`
 3. `yarn start`
 
+- ##### Testing E2E
+- To run the tests → `yarn run test`
+- To see the test report → `yarn run test-report`
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ---
